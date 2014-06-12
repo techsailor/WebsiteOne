@@ -80,11 +80,6 @@ class ArticlesController < ApplicationController
       flash[:notice] = "Successfully voted down the article \"#{@article.title}\""
     end
     redirect_to article_path(@article)
-
-
-
-
-
   end
 
   def cancelvote
