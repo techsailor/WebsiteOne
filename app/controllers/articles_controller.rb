@@ -62,10 +62,17 @@ class ArticlesController < ApplicationController
     @article = Article.friendly.find(params[:id])
 
     if @article.user_id == current_user.id then
-        flash[:error] = "Can not vote for your own article \"#{@article.title}\""
+      flash[:error] = "Can not vote for your own article \"#{@article.title}\""
     else
-        @article.upvote_by current_user
+      @article.upvote_by current_user
+      case @article.vote_registered?
+      when true
         flash[:notice] = "Successfully voted up the article \"#{@article.title}\""
+      when false
+        flash[:error] = "You have already given this article an up vote"
+      when nil
+        flash[:error] = "Your vote was note registered"
+      end
     end
     redirect_to article_path(@article)
   end
@@ -77,7 +84,14 @@ class ArticlesController < ApplicationController
         flash[:error] = "Can not vote for your own article \"#{@article.title}\""
     else
       @article.downvote_by current_user
-      flash[:notice] = "Successfully voted down the article \"#{@article.title}\""
+      case @article.vote_registered?
+      when true
+        flash[:notice] = "Successfully voted down the article \"#{@article.title}\""
+      when false
+        flash[:error] = "You have already given this article a down vote"
+      when nil
+        flash[:error] = "Your vote was not registered"
+      end
     end
     redirect_to article_path(@article)
   end
@@ -85,7 +99,14 @@ class ArticlesController < ApplicationController
   def cancelvote
     @article = Article.friendly.find(params[:id])
     @article.unvote_by current_user
-    flash[:notice] = "Cancelled vote for the article \"#{@article.title}\""
+    case @article.vote_registered?
+    when true
+      flash[:notice] = "Could not cancel your vote for the article \"#{@article.title}\""
+    when false
+      flash[:notice] = "Cancelled your vote for the article \"#{@article.title}\""
+    when nil
+      flash[:error] = "Can not cancel when you have not voted for this article"
+    end
     redirect_to article_path(@article)
   end
 
@@ -94,4 +115,5 @@ class ArticlesController < ApplicationController
   def article_params
     params[:article].permit(:title, :content, :tag_list)
   end
+
 end
