@@ -14,7 +14,7 @@
       <li>Created on <%= article.created_at.strftime('%d %B %y') %> by <%= link_to author.display_name, user_path(author) %></li>
       <li>Last updated <%= time_ago_in_words(article.updated_at) %> ago</li>
       <li><%= link_to_tags(article.tag_list) %></li>
-      <li>Votes:&nbsp;<span class="badge vote"><%= article.get_upvotes.size - article.get_downvotes.size %></span>
+      <li>Votes:&nbsp;<span class="badge vote"><%= article.vote_value %></span>
       <% if (user_signed_in? and not article.new_record?) and current_user.id != article.user_id %>
         <% visitor_has_voted = current_user.voted_as_when_voted_for article %>
         <% if visitor_has_voted == nil %>
