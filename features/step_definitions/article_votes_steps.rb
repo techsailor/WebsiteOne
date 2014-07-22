@@ -40,7 +40,8 @@ end
 
 Given(/^I have authored article "(.*?)"$/) do |title|
   @user = default_test_author
-  step 'I am logged in with email "' + @user.email + '"'
+  step "I am logged in as \"#{@user.first_name}\""
   @article = Article.find_by_title title
   @article ||= @user.articles.create( {title: title, content: 'An Author vote test article.'} )
 end
+
