@@ -37,7 +37,7 @@ describe 'articles/show', type: :view do
 
     it 'should show article vote value' do
         render
-        expect(rendered).to have_content("Votes: #{@article.votes_value}")
+        expect(rendered).to have_content("Votes: #{@article.vote_value}")
         expect(rendered).not_to have_link('Up Vote')
         expect(rendered).not_to have_link('Down Vote')
     end
