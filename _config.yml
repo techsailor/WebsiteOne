@@ -1,0 +1,33 @@
+# Site settings
+title: techsailor notes wso
+email: your-email@domain.com
+description: ""
+baseurl: ""
+url: "http://saasbook.home:4000"
+#url: "http://techsailor.github.io/WebsiteOne"
+twitter_username: 
+github_username:  techsailor
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+# add on settings
+
+defaults:
+  -
+    scope:
+      path: "doc-review"
+    values:
+      jhead: "Document Review"
+      jlead: "Checking how to get started"
+      jbutton: "Start Here ..."
+      jurl: #
+  -
+    scope:
+      path: ""
+    values:
+      jhead: "techsailor notes"
+      jlead: "Agileventures websiteone, ideas & notes."
+      jbutton: "Take a quick tour now ..."
+      jurl: doc-review/t1
