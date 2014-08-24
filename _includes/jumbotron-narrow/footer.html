@@ -1,11 +1,11 @@
 <footer>
   <div class="row">
     <div class="col-md-6"><!-- col 1 -->
-      <p>Date 2014</p>
+      <p><small>{{ site.time |date_to_rfc822 }}</small></p>
     </div>
 
     <div class="col-md-6"><!-- col 2 -->
-      <ul>
+      <ul class="pull-right">
         {% if site.github_username %}<li>
           <a href="https://github.com/{{ site.github_username }}">
             <span class="icon github">

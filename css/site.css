@@ -1,7 +1,48 @@
 body {
     background-color: #ffffff;
+    line-height: 1.4em;
+    color: #333;
+    font-size:16px;
+}
+h1 {
+    font-size:56px;
+}
+a {
+color:#ee7335;
 }
 
+/* style some attributes for agv */
+.panel-agv-slate {
+  border-color: #34495e;        /* slate grey */
+}
+.panel-agv-slate > .panel-heading {
+  color: #ffffff;
+  background-color: #34495e;        /* slate grey */
+  border-color: #34495e;        /* slate grey */
+}
+.panel-agv-slate > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #ddd;
+}
+.panel-agv-slate > .panel-heading .badge {
+  color: #f5f5f5;
+  background-color: #ee7335;    /* orange */
+}
+.panel-agv-slate > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #34495e;        /* slate grey */
+}
+
+.agv-orange-panel {
+    background-color: #ee7335;    /* orange */
+    color: #ffffff;
+}
+
+.agv-iconised-list {
+		list-style-type: none;
+}
+
+.iconised-header {
+    display: inline-block;
+}
 .github-icon-svg,
 .twitter-icon-svg {
   display: inline-block;

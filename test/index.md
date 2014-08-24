@@ -1,9 +1,9 @@
 ---
 layout: jumbotron-narrow/default
-title: test
+title: 
 ---
 
 
-|*[config check](config_values) |*[remote embed](embed_gslides)
+| [config check](config_values) | [remote embed](embed_gslides)
 {:width="100%"}
 

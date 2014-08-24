@@ -10,7 +10,7 @@ There are two fundamental ways to do this.
 * merge
 * rebase
 
-We have adopted to rebase, since this keeps the history cleaner. You can read more about this here [link??](#).
+We have adopted to rebase, since this keeps the history cleaner. You can read more about this here [Difference between rebase and merge](http://agileventures.org/articles/the-difference-between-merging-and-rebasing-and-about-squashing-commits).
 
 ### Fetch and Rebase with upstream
 

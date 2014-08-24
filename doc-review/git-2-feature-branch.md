@@ -11,9 +11,9 @@ Keep your changes that relate to a particular feature on it's own
 branch. So you will want to Create a feature branch from the current
 latest development state.
 
-####Make your develop branch up-to-date with upstream develop.
+####But first bring your develop branch up-to-date with upstream develop.
 
-Fetch upstream changes.
+Fetch the upstream changes.
 
 {% highlight bash %}
    $ git fetch upstream develop 
@@ -55,7 +55,7 @@ upstream develop frequently, to prevent straying too far from
 development head.
 
 Next Read : [How to resync your feature branch with upstream
-develop](../resync-with-upstream).
+develop](../git-3-sync-with-upstream/).
 
 ----
 
@@ -70,6 +70,7 @@ option on chekcout.
 
 {% highlight bash %}
 
+$ git fetch upstream develop
 $ git checkout develop              # Important!: to get onto develop branch !
 $ git pull upstream develop         # combinded fetch & merge from upstream develop
                                     # onto current working tree
@@ -80,18 +81,26 @@ $ git checkout -b my_feature_branch # combined create & checkout of feature bran
 
 ####Method 2
 
-Avoids the merge altogether and uses upstream/develop mentioned above.
+Avoids the merge altogether and use upstream/develop mentioned above.
 
 {% highlight bash %}
 
 $ git fetch upstream develop
 $ git checkout upstream/develop       # HEAD less state
-$ git checkout -b my_feature_branch   # create and checkout feature branch	
-
-# This can be shortened further to
-
-$ git fetch upstream develop
-$ git checkout -b new_feature upstream/develop
+$ git checkout --no-track -b my_feature_branch # create and checkout feature branch	
 
 {% endhighlight %}
+
+This can be shortened even further to just two lines,
+
+{% highlight bash %}
+
+$ git fetch upstream develop
+$ git checkout --no-track -b new_feature upstream/develop
+
+{% endhighlight %}
+
+Note, I avoided the automatic set-up of a tracking references because
+I would not use them and I don't want anything unneccesary hanging
+around that may trip me up down the line.
 

@@ -3,6 +3,12 @@ layout: jumbotron-narrow/default
 title:
 ---
 
+<div class="panel agv-orange-panel">
+  <div style="width:420px" class="center-block">
+    <h1>Access the tools</h1>
+  </div>
+</div>
+
 ##Getting started with github
 
 ### Fork websiteone repository
@@ -43,5 +49,5 @@ You are now in a position that you can :
 
 You can read about how to do this in the next article : [Working on a
 Feature
-Branch](../working-with-git-on-a-feature-branch/)
+Branch](../git-2-feature-branch/)
 
