@@ -54,11 +54,11 @@ I haven't written (or linked to) all sub articles yet (I did a little
 work on 3 of the 4 git articles) and linked elsewhere, where I
 could.
 
+{% include jumbotron-narrow/button.html url="/doc-review/agv_getting_started/" label="Getting Started" %}
 
-[Getting Started](/doc-review/agv_getting_started/)
+
 {% comment %}
 {% include jumbotron-narrow/jumbotron.html %}
 {% endcomment %}
-
 
 {{ content }}
