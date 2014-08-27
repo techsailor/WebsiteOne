@@ -13,10 +13,10 @@ I started to go through the documentation at agileventures.org with
 an aim to review, which articles were good as introductions to getting
 set up with Agile Venture Projects.
 
-* First I [listed the articles](/doc-review/agv_docs/) and documents
+* First I [listed the articles](doc-review/agv_docs/) and documents
 only under one project (WebsiteOne) for the time being.
 
-> I did this first as a spreadsheet, then moved it to a wso article, but
+> I did this first as a spreadsheet, then moved it to a [wso article](http://agileventures.org/projects/websiteone/documents/documentation-review-for-new-users-getting-started), but
 > found that it was quicker and easier to work with the plain text file
 > and Markdown.
 
@@ -27,11 +27,13 @@ only under one project (WebsiteOne) for the time being.
 >going, it also provides a narative about the background and philosophy
 >and thus looses some of the emphasis on the list of things to do.
 
+###What not Why
+
 So I thought I'd try and produce one screen with only the _"What"_
-and leave the _Why_ for maybe an introductory article.
+and leave the _Why_ for a different article.
 
 I couldn't remove the steps per-se, but managed to reduce them into
-only six Topic areas, and attempted to make this page generic, so that
+six Topic areas, and attempted to make this page generic, so that
 it can sit above the project specific documentation.
 
 1. Scrums
@@ -41,8 +43,7 @@ it can sit above the project specific documentation.
 5. VM Setup
 6. Working with the Code base
 
-It's a first stab at trying to bring the information together. See
-what you think. 
+It's a first stab. See what you think.
 
 As I mentioned the git articles were written in Markdown using Liquid
 templates (Jekyll) and is hosted as a Github page. It's not using the
@@ -54,8 +55,7 @@ I haven't written (or linked to) all sub articles yet (I did a little
 work on 3 of the 4 git articles) and linked elsewhere, where I
 could.
 
-{% include jumbotron-narrow/button.html url="/doc-review/agv_getting_started/" label="Getting Started" %}
-
+{% include jumbotron-narrow/button.html url="doc-review/agv_getting_started/" label="Getting Started" %}
 
 {% comment %}
 {% include jumbotron-narrow/jumbotron.html %}

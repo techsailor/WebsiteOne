@@ -18,7 +18,7 @@ repository. In the top right corner, you should see the fork
 button. Use it to get your copy of this project under your account.
 
 
-![Github fork button](/images/GithubFork.png 'http://Github.com/agileventure.websiteone/')
+![Github fork button](../../images/GithubFork.png "http://Github.com/agileventures/websiteone/")
 
 ### Clone your forked repository
 

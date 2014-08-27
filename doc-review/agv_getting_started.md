@@ -29,7 +29,7 @@ title: Get Setup
 								<ul class="agv-iconised-list">
           				<li title="You need a github account to access the source code repository."><i class="fa fa-github"> Github</i></li>
           				<li title="We use Slack to chat on Project specific channels."><i class="fa fa-slack"> Slack</i></li>
-          				<li title="To access our stories and bugs."><img src="/images/PivotalTracker/Tracker_Full_Horizontal_Small.png" height="16px" width="*"></li>
+          				<li title="To access our stories and bugs."><img src="../../images/PivotalTracker/Tracker_Full_Horizontal_Small.png" height="16px" width="*"></li>
         				</ul>
 							</td>
 							<td>
