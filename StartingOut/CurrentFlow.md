@@ -49,9 +49,14 @@ I un-imaginatively named the machine *ud14041b32*, with the one user *devtop*.
 
 And to make sure I was up-to date I did the following.
 
-    sudo apt-get update
-    sudo apt-get upgrade      
-    
+```bash
+require 'redcarpet'
+
+sudo apt-get update
+sudo apt-get upgrade      
+
+```
+
 A Kernel upgrade was *held back*, so followed with the next line, which I read about [here](http://ubuntuforums.org/showthread.php?t=914157).
     
     sudo apt-get dist-upgrade # to force a new package install 
@@ -64,16 +69,21 @@ So I installed an additional virtual box package in the guest, reference http://
     
 I knew I would need git so I installed that manually.
 
+```bash
     sudo apt-get install git
+```
 
 I did't get the setup script using wget as instructed, but chose to fork and clone the entire project  [AgleVentures/setup-scripts](https://github.com/AgileVentures/setup-scripts) incase I found a bug I could fix it and issue a pull-request with the changes.
+
+```bash
 
     mkdir ~/wk # I'm lazy at typing, so all my agile venture projects will sit in wk 
     cd ~/wk
     git clone https://github.com/techsailor/setup-scripts.git
     cd ~
     WITH_PHANTOMJS=true REQUIRED_RUBY=2.1.11  source wk/setup-scripts/scripts/rails_setup.sh
-  
+```
+
 ###Bug Ruby version wrong.
 
 Typo, should be 2.1.1 not 2.1.11
@@ -96,7 +106,10 @@ So at this stage we could either,
 
 Only setup Ruby via rvm and add PhantomJS
 
+```bash
+
     WITH_PHANTOMJS=true REQUIRED_RUBY=2.1.1  source wk/setup-scripts/scripts/rails_setup.sh 
+```
 
 or
 
@@ -108,6 +121,7 @@ Create our local repo now and provide it on the command-line to switch on our op
 But first I must create my local repo from existing and out of date github repo.
 
 ```bash
+
 cd wk
 git clone https://github.com/techsailor/WebsiteOne.git websiteone
 git remote add upstream http://github.com/agileventures/websiteone.git
@@ -131,6 +145,7 @@ and executing the database migrations, we explicitly switch things on.
 * Version 2.1.1 triggers the warning, 
 
 ```bash
+
 Install of ruby-2.1.1 - #complete 
 Please be aware that you just installed a ruby that requires 3 patches just to be compiled on an up to date linux system.
 This may have known and unaccounted for security vulnerabilities.
@@ -139,16 +154,20 @@ Please consider upgrading to ruby-2.1.3 which will have all of the latest securi
 
 ###Bug there is a simple bug in the script
 
-```bash
+``` bash
+require 'redcarpet'
 
+#Replace
 -  if [ -n $GEMSET ]; then
+#With
 +  if [ -n "$GEMSET" ]; then
 
 ```
 
 Causing 
 
-```
+```bash
+
 Install of ruby-2.1.1 - #complete 
 Please be aware that you just installed a ruby that requires 3 patches just to be compiled on an up to date linux system.ecurity vulnerabilities.
 Please consider upgrading to ruby-2.1.3 which will have all of the latest security patches.ilt without documentation, to build it run: rvm docs generate-ri
@@ -168,8 +187,8 @@ I have the ruby environment set-up with phantomjs, I need to `bundle install` an
 
 ###Bug (ubuntu) postgres user failure
 
-```
-require 'redcarpet'
+```bash
+
 devtop@ud14041b32:~/wk/websiteone$ bundle exec rake db:setup
 FATAL:  Peer authentication failed for user "postgres"
 /home/devtop/.rvm/gems/ruby-2.1.1/gems/activerecord-4.1.0/lib/active_record/connection_adapters/postgresql_adapter.rb:881:in `initialize'
