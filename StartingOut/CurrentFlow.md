@@ -220,5 +220,14 @@ sudo vi /etc/postgresql/9.3/main/pg_ident.conf
 sudo /etc/init.d/postgresql restart
 
 ```
-Better fix altogether would be to edit the files as part of the installation.
+Better fix altogether would be to edit the files as part of the installation script, `rails_setup.sh`
+
+Bug missing instructions to create test database before runing tests.
+
+```bash
+$ rake db:setup RAILS_ENV=test
+```
+
+
+
 
