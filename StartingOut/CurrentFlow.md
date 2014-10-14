@@ -161,3 +161,41 @@ Creating a new gemset 2.1.1@
 Using /home/devtop/.rvm/gems/ruby-2.1.1
 
 ```
+
+##Eventually
+
+I have the ruby environment set-up with phantomjs, I need to `bundle install` and create a database.
+
+###Bug (ubuntu) postgres user failure
+
+```
+require 'redcarpet'
+devtop@ud14041b32:~/wk/websiteone$ bundle exec rake db:setup
+FATAL:  Peer authentication failed for user "postgres"
+/home/devtop/.rvm/gems/ruby-2.1.1/gems/activerecord-4.1.0/lib/active_record/connection_adapters/postgresql_adapter.rb:881:in `initialize'
+
+```
+
+This topic is covered very well by an existing paragraph Under the Local Support wiki.
+
+I propose we move this information from Local Support to the Generic overall description, so that all projects can refer to it, since the fix is common to all projects and usiually only done once. (See Local Support [wiki Section](https://github.com/AgileVentures/LocalSupport/wiki/installation#peer-authentication-fails-for-user-postgres)).
+
+```bash
+
+sudo vi /etc/postgresql/9.3/main/pg_hba.conf 
+
+# Append to line 85 " map=basic" to become
+    84	# Database administrative login by Unix domain socket
+    85	local   all             postgres                                peer map=basic
+
+sudo vi /etc/postgresql/9.3/main/pg_ident.conf
+#Add the following map at line 43
+    42	# MAPNAME       SYSTEM-USERNAME         PG-USERNAME
+    43	basic		devtop			postgres
+
+# Then restart postgres
+sudo /etc/init.d/postgresql restart
+
+```
+Better fix altogether would be to edit the files as part of the installation.
+
