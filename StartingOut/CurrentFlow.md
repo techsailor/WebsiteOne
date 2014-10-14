@@ -51,6 +51,9 @@ And to make sure I was up-to date I did the following.
 
 ```bash
 require 'redcarpet'
+```
+
+```bash
 
 sudo apt-get update
 sudo apt-get upgrade      
@@ -70,18 +73,21 @@ So I installed an additional virtual box package in the guest, reference http://
 I knew I would need git so I installed that manually.
 
 ```bash
-    sudo apt-get install git
+
+sudo apt-get install git
+
 ```
 
 I did't get the setup script using wget as instructed, but chose to fork and clone the entire project  [AgleVentures/setup-scripts](https://github.com/AgileVentures/setup-scripts) incase I found a bug I could fix it and issue a pull-request with the changes.
 
 ```bash
 
-    mkdir ~/wk # I'm lazy at typing, so all my agile venture projects will sit in wk 
-    cd ~/wk
-    git clone https://github.com/techsailor/setup-scripts.git
-    cd ~
-    WITH_PHANTOMJS=true REQUIRED_RUBY=2.1.11  source wk/setup-scripts/scripts/rails_setup.sh
+mkdir ~/wk # I'm lazy at typing, so all my agile venture projects will sit in wk 
+cd ~/wk
+git clone https://github.com/techsailor/setup-scripts.git
+cd ~
+WITH_PHANTOMJS=true REQUIRED_RUBY=2.1.11  source wk/setup-scripts/scripts/rails_setup.sh
+
 ```
 
 ###Bug Ruby version wrong.
@@ -108,7 +114,8 @@ Only setup Ruby via rvm and add PhantomJS
 
 ```bash
 
-    WITH_PHANTOMJS=true REQUIRED_RUBY=2.1.1  source wk/setup-scripts/scripts/rails_setup.sh 
+WITH_PHANTOMJS=true REQUIRED_RUBY=2.1.1  source wk/setup-scripts/scripts/rails_setup.sh 
+
 ```
 
 or
