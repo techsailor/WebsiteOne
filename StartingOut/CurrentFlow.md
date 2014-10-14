@@ -51,9 +51,6 @@ And to make sure I was up-to date I did the following.
 
 ```bash
 require 'redcarpet'
-```
-
-```bash
 
 sudo apt-get update
 sudo apt-get upgrade      
