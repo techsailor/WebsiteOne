@@ -71,7 +71,7 @@ I knew I would need git so I installed that manually.
 
 ```bash
 
-sudo apt-get install git
+sudo apt-get install git #install git from command line
 
 ```
 
