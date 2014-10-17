@@ -222,12 +222,21 @@ sudo /etc/init.d/postgresql restart
 ```
 Better fix altogether would be to edit the files as part of the installation script, `rails_setup.sh`
 
-Bug missing instructions to create test database before runing tests.
+###Bug missing instructions to create test database before runing tests.
 
 ```bash
 $ rake db:setup RAILS_ENV=test
 ```
 
+* * * * *
+
+###Links
+
+* [github:Agileventures/setup-scripts Readme.md](https://github.com/AgileVentures/setup-scripts)
+* [github:Websiteone github wiki - Development envirnment set up](https://github.com/AgileVentures/WebsiteOne/wiki/Development-environment-set-up)
+* [github:Websiteone github wkiki - Project Setup for new users](https://github.com/AgileVentures/WebsiteOne/wiki/Project-Setup-%28New-Users%29)
+* [ggileventures: Getting Started](http://agileventures.org/getting-started)
+* [agileventures: Website One Project page](http://agileventures.org/projects/websiteone)
 
 
 
